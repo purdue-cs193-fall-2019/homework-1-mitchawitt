@@ -1,5 +1,6 @@
 # Mitchell Witt's First CS193 Homework
 
+<div style = "width: 100px; height: 100px; background-color: #000000;"></div>
 ## Favorite things about CS193
 - Making me get a GitHub Pro account for free
 - Class playlist is okay
