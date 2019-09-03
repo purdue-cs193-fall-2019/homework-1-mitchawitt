@@ -1,5 +1,5 @@
-var x = window.innerWidth/2;
-var y = window.innerHeight/2 - 1;
+var x = canvas.width/2;
+var y = canvas.height/2 - 1;
 var lengthSlider = document.getElementById("lengthSlider");
 var branchSlider = document.getElementById("branchSlider");
 var lengthValue = document.getElementById("lengthValue");
@@ -21,8 +21,8 @@ window.onload = function()
 {
 	canvas=document.getElementById("canvas");
 	ctx=canvas.getContext("2d");
-	canvas.width=window.innerWidth;
-	canvas.height=window.innerHeight;
+	canvas.width=200;
+	canvas.height=200;
 	setInterval(main, 1);
 	mouse = new Mouse();
 }
@@ -43,12 +43,12 @@ Mouse = function() {
 
 function main(){
 	ctx.fillStyle = 'black';
-	ctx.fillRect(0,0,window.innerWidth, window.innerHeight);
+	ctx.fillRect(0,0,canvas.width, canvas.height);
 	ctx.beginPath();
 	ctx.strokeStyle = 'white';
 
-	var y = mouse.y - window.innerHeight/2;
-	var x = mouse.x - window.innerWidth/2;
+	var y = mouse.y - canvas.height/2;
+	var x = mouse.x - canvas.width/2;
 	var branches = branchSlider.value;
 	var length = lengthSlider.value;
 	var partitions = partitionSlider.value;
@@ -69,7 +69,7 @@ function main(){
 		}
 	}
 	theta = Math.atan2(y, x);
-	drawTree(branches, theta, length, window.innerWidth/2, window.innerHeight/2);
+	drawTree(branches, theta, length, canvas.width/2, canvas.height/2);
 	ctx.stroke();
 }
 
